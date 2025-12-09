@@ -8,7 +8,7 @@
 }
 
 body{
-    background-color: lightgoldenrodyellow;
+    background-color: #f0f8ff; /* aliceblue */
     font-family: Arial, sans-serif;
     padding: 20px;
     line-height: 1.6;
@@ -22,8 +22,8 @@ body{
     padding: 10px;
     margin-right: 10px;
 
-    border: 2px solid black;
-    box-shadow: 0px 5px 25px rgba(0,0,0,0.2);
+    border: 2px solid #333333;
+    box-shadow: 0px 5px 25px rgba(50,50,50,0.2);
     border-radius: 10px;
 }
 
@@ -53,9 +53,9 @@ body{
 .flex{
     margin: 10px 200px 20px 10px;
     gap: 10px;
-    border: 2px solid black;
+    border: 2px solid #444444;
     border-radius: 10px;
-    box-shadow: 5px 10px 25px black;
+    box-shadow: 5px 10px 25px #555555;
     align-items: center;
     justify-content: center;
 }
@@ -66,7 +66,7 @@ body{
 h1{
     font-family:cursive;
     text-align: center;
-    color: darkred; /* static color */
+    color: #2e8b57; /* sea green */
 }
 
 .title{
@@ -78,63 +78,65 @@ h1{
 .sub-head{
     text-decoration: underline;
     font-family:'Courier New', Courier, monospace;
+    color: #8b4513; /* saddle brown */
 }
 
 .para{
     font-size: 22px;
     margin: 10px;
+    color: #4b0082; /* indigo */
 }
 
 /* ===========================
    Section Boxes (sec1–sec4)
 =========================== */
 .sec1{
-    background-color: lightblue;
+    background-color: #ffe4e1; /* misty rose */
     padding: 25px;
     margin: 10px 100px 10px 10px;
-    border: 2px solid black;
+    border: 2px solid #333333;
     border-radius: 10px;
-    box-shadow:2px 10px 8px steelblue;
+    box-shadow:2px 10px 8px #ff69b4; /* hot pink shadow */
     font-size: 18px;
 }
 
 .sec2{
-    background-color: lightgreen;
+    background-color: #e0ffff; /* light cyan */
     padding: 25px;
     margin: 10px 100px 10px 10px;
-    border: 2px solid black;
+    border: 2px solid #333333;
     border-radius: 10px;
-    box-shadow: 2px 10px 8px forestgreen;
+    box-shadow: 2px 10px 8px #20b2aa; /* light sea green shadow */
     font-size: 18px;
 }
 
 .sec3{
-    background-color: lightpink;
+    background-color: #fffacd; /* lemon chiffon */
     padding: 25px;
     margin: 10px 100px 10px 10px;
-    border: 2px solid black;
+    border: 2px solid #333333;
     border-radius: 10px;
-    box-shadow: 2px 10px 8px deeppink;
+    box-shadow: 2px 10px 8px #ff8c00; /* dark orange shadow */
     font-size: 18px;
 }
 
 .sec4{
-    background-color: lightyellow;
+    background-color: #d8bfd8; /* thistle */
     padding: 25px;
     margin: 10px 100px 10px 10px;
-    border: 2px solid black;
+    border: 2px solid #333333;
     border-radius: 10px;
-    box-shadow: 2px 10px 8px darkorange;
+    box-shadow: 2px 10px 8px #9370db; /* medium purple shadow */
     font-size: 18px;
 }
 
 /* ===========================
    Hover Effects
 =========================== */
-.sec1:hover{ background-color:steelblue; }
-.sec2:hover{ background-color:forestgreen; }
-.sec3:hover{ background-color:deeppink; }
-.sec4:hover{ background-color:darkorange; }
+.sec1:hover{ background-color:#ff69b4; } /* hot pink */
+.sec2:hover{ background-color:#20b2aa; } /* light sea green */
+.sec3:hover{ background-color:#ff8c00; } /* dark orange */
+.sec4:hover{ background-color:#9370db; } /* medium purple */
 
 /* ===========================
    Image General Styling
