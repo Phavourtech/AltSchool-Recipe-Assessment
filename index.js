@@ -42,3 +42,102 @@ do {
         }
     
 
+// ===============================
+// Simple Student Grade Tracker
+// ===============================
+
+// Array to keep all students
+let students = [];
+
+// Get elements from the page
+const nameInput = document.getElementById("studentName");
+const gradeInput = document.getElementById("studentGrade");
+const addBtn = document.getElementById("addStudentBtn");
+const studentList = document.getElementById("studentList");
+const averageGradeEl = document.getElementById("averageGrade");
+
+// When "Add Student" button is clicked
+addBtn.onclick = function() {
+    const name = nameInput.value.trim();
+    const grade = Number(gradeInput.value);
+
+    // Check if name is empty
+    if (name === "") {
+        alert("Please enter a student name");
+        return;
+    }
+
+    // Check if grade is valid
+    if (isNaN(grade) || grade < 0 || grade > 100) {
+        alert("Please enter a grade between 0 and 100");
+        return;
+    }
+
+    // Make a student object
+    const student = {
+        id: new Date().getTime(),
+        name: name,
+        grade: grade
+    };
+
+    // Add student to array
+    students.push(student);
+
+    // Clear input fields
+    nameInput.value = "";
+    gradeInput.value = "";
+
+    // Update the display
+    displayStudents();
+    updateAverage();
+};
+
+// Function to show all students
+function displayStudents() {
+    studentList.innerHTML = ""; // clear current list
+
+    for (let i = 0; i < students.length; i++) {
+        const student = students[i];
+
+        // Create a table row
+        const row = document.createElement("tr");
+
+        row.innerHTML = "<td>" + student.name + "</td>" +
+                        "<td>" + student.grade + "</td>" +
+                        "<td><button onclick='deleteStudent(" + student.id + ")'>Delete</button></td>";
+
+        studentList.appendChild(row);
+    }
+}
+
+// Function to delete a student
+function deleteStudent(id) {
+    const newStudents = [];
+
+    for (let i = 0; i < students.length; i++) {
+        if (students[i].id !== id) {
+            newStudents.push(students[i]);
+        }
+    }
+
+    students = newStudents;
+
+    displayStudents();
+    updateAverage();
+}
+
+// Function to calculate average grade
+function updateAverage() {
+    if (students.length === 0) {
+        averageGradeEl.textContent = "0";
+        return;
+    }
+
+    let total = 0;
+    for (let i = 0; i < students.length; i++) {
+        total += students[i].grade;
+    }
+
+    const average = (total / students.length).toFixed(2);
+    averageGradeEl.textContent = average;
+}
